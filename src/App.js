@@ -28,6 +28,10 @@ function App({
     // ???
   }
 
+  if (spinnerOn) {
+    return <div className="spinner">Please Wait</div>
+  }
+
   return (
     <div className="App">
       {/* here we can add a new friend */}
