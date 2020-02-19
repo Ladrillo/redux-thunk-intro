@@ -33,7 +33,7 @@ const store = createStore(
     applyMiddleware(thunk /* ,etc , other middlewares */),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   ),
-);
+)
 
 ReactDOM.render(
   // STEP-6 WRAP THE APPLICATION WITH A PROVIDER FROM react-redux

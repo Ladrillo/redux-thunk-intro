@@ -10,6 +10,8 @@ export function formReducer(state = initialStateForm, action) {
         ...state,
         [action.payload.inputName]: action.payload.inputValue
       }
+    case types.RESET_INPUTS:
+      return initialStateForm
     default:
       return state
   }
@@ -17,10 +19,7 @@ export function formReducer(state = initialStateForm, action) {
 
 const initialStateFriends = []
 export function friendsReducer(state = initialStateFriends, action) {
-  // ACTION { type: "ADD_FRIEND", payload: { fname: "alison", lname: "smith", id: "1233", married: false }}
   switch (action.type) {
-    case types.ADD_FRIEND:
-      return state.concat(action.payload)
     default:
       return state
   }
