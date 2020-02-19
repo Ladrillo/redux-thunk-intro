@@ -37,10 +37,19 @@ export function friendsReducer(state = initialStateFriends, action) {
       return state
     case types.POST_FRIEND_START:
       return state
+    case types.PUT_FRIEND_START:
+        return state
     case types.SET_POSTED_FRIEND:
       return state.concat(action.payload) // newly created friend
     case types.SET_FETCHED_FRIENDS:
       return action.payload // all friends from API
+    case types.SET_UPDATED_FRIEND:
+      return state.map(fr => {
+        if (action.payload.id === fr.id) {
+          return action.payload
+        }
+        return fr
+      })
     default:
       return state
   }
