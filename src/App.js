@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import * as actionCreators from './state/actionCreators'
 import './App.css'
@@ -27,6 +27,10 @@ function App({
   const onMarkFriendMarried = (/* ??? */) => event => {
     // ???
   }
+
+  useEffect(() => {
+    fetchAllFriends()
+  }, [])
 
   if (spinnerOn) {
     return <div className="spinner">Please Wait</div>
