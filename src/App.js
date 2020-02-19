@@ -21,10 +21,10 @@ function App({
   }
   const onSubmit = event => {
     event.preventDefault()
-    // ?
+    // ???
   }
-  const onMarkFriendMarried = (/* ? */) => event => {
-    // ?
+  const onMarkFriendMarried = (/* ??? */) => event => {
+    // ???
   }
 
   return (
