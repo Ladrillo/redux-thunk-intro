@@ -30,6 +30,16 @@ app.post('/api/friends', (req, res) => {
   }
 })
 
+app.delete('/api/friends/:id', (req, res) => {
+  if (req.params.id) {
+    setTimeout(() => {
+      res.json(friends.filter(fr => fr.id !== req.params.id))
+    }, 1100)
+  } else {
+    res.status(500).json({ message: 'You need to pass an id' })
+  }
+})
+
 app.put('/api/friends/:id', (req, res) => {
   if (req.body.fname && req.body.lname && (typeof req.body.married === 'boolean')) {
     if (friends.find(fr => fr.id === req.params.id)) {
