@@ -38,6 +38,14 @@ export function friendsReducer(state = initialStateFriends, action) {
   }
 }
 
-export function spinnerReducer() {
-  
+const initialStateSpinner = false;
+export function spinnerReducer(state = initialStateSpinner, action) {
+  switch (action.type) {
+    case types.SPINNER_START:
+      return true;
+    case types.SPINNER_STOP:
+      return initialStateSpinner;
+    default:
+      return state;
+  }
 }
