@@ -35,6 +35,11 @@ export function friendsReducer(state = initialStateFriends, action) {
   switch (action.type) {
     case types.FETCH_FRIENDS_START:
       return state
+    case types.POST_FRIEND_START:
+      return state
+    case types.SET_POSTED_FRIEND:
+      // we concat the newly created friend to the friends array
+      return state.concat(action.payload)
     case types.SET_FETCHED_FRIENDS:
       return action.payload
     default:
