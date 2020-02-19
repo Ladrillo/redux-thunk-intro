@@ -33,6 +33,10 @@ export function formReducer(state = initialStateForm, action) {
 const initialStateFriends = []
 export function friendsReducer(state = initialStateFriends, action) {
   switch (action.type) {
+    case types.FETCH_FRIENDS_START:
+      return state
+    case types.SET_FETCHED_FRIENDS:
+      return action.payload
     default:
       return state
   }
