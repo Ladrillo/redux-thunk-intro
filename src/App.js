@@ -8,8 +8,10 @@ function App({
   // A- data from redux state (injected by STEP-8)
   formValues,
   friends,
+  spinnerOn,
   // B- callbacks to change state (action creators injected by STEP-9)
   changeInput,
+  fetchAllFriends,
   // C- props actually injected by the parent component
 }) {
   const onChange = event => {
@@ -71,6 +73,7 @@ function mapStateToProps(state) {
     // what props do we want the component to get?
     formValues: state.formValues,
     friends: state.friends,
+    spinnerOn: state.spinnerOn,
   }
 }
 
