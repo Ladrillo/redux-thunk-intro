@@ -15,6 +15,7 @@ import { formReducer, friendsReducer } from './state/reducers'
 //     { id: someId, fname: 'Jane', lname: 'Doe', married: false },
 //     { id: anotherId, fname: 'john', lname: 'Smith', married: false },
 //   ],
+//   spinnerOn: false,
 // }
 
 // STEP-4 USE combineReducers FROM redux TO MAKE A SINGLE REDUCER
