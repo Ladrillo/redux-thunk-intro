@@ -2,15 +2,15 @@ import * as types from './actionTypes'
 
 // STEP-1 DESIGN APPLICATION STATE
 // {
-//   formValues: { // SLICE 1
+//   formValues: {     // SLICE 1
 //     fname: '',
 //     lname: '',
 //   },
-//   friends: [    // SLICE 2
+//   friends: [        // SLICE 2
 //     { id: someId, fname: 'Jane', lname: 'Doe', married: false },
 //     { id: anotherId, fname: 'john', lname: 'Smith', married: false },
 //   ],
-//   spinnerOn: false,
+//   spinnerOn: false, // SLICE 3
 // }
 
 // STEP-3 CREATE ONE REDUCER FUNCTION PER SLICE OF STATE
