@@ -23,13 +23,6 @@ export function friendsReducer(state = initialStateFriends, action) {
   switch (action.type) {
     case types.ADD_FRIEND:
       return state.concat(action.payload)
-    case types.MARK_MARRIED:
-      return state.map(fr => {
-        if (action.payload === fr.id) {
-          return { ...fr, married: true }
-        }
-        return fr
-      })
     default:
       return state
   }
