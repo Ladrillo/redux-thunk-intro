@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+form, .friends {
+  margin: 20px;
+}
+
+.fav {
+  color: purple;
+}
