@@ -49,3 +49,25 @@ export const postNewFriend = ({ fname, lname, married }) => dispatch => {
       dispatch({ type: types.SPINNER_STOP })
     })
 }
+
+export const updateFriend = ({ id, fname, lname, married }) => dispatch => {
+  dispatch({ type: types.PUT_FRIEND_START })
+  dispatch({ type: types.SPINNER_START })
+
+  axios.put(friendsAPI + `/${id}`, {
+    fname,
+    lname,
+    married
+  })
+    .then(res => {
+      // we have the newly created friend inside res.data
+      dispatch({ type: types.SET_UPDATED_FRIEND, payload: res.data })
+    })
+    .catch(err => {
+      debugger
+      // dispatch({ type: "SET_ERROR", payload: err.message })
+    })
+    .finally(() => {
+      dispatch({ type: types.SPINNER_STOP })
+    })
+}
