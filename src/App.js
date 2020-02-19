@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { changeInput, addFriend, markFriendMarried } from './state/actionCreators'
 // STEP-9 BRING IN THE ACTION CREATORS
+import * as actionCreators from './state/actionCreators'
 import './App.css'
 
 function App({
@@ -11,11 +11,8 @@ function App({
   friends,
   // B- callbacks to change state (action creators)
   changeInput,
-  addFriend,
-  markFriendMarried,
   // C- props actually injected by the parent component
 }) {
-  // Event listeners (we still need 'em)
   const onChange = event => {
     changeInput({
       inputName: event.target.name,
@@ -24,13 +21,10 @@ function App({
   }
   const onSubmit = event => {
     event.preventDefault()
-    addFriend({
-      fname: formValues.fname,
-      lname: formValues.lname,
-    })
+    // ?
   }
-  const onMarkFriendMarried = id => event => {
-    markFriendMarried(id)
+  const onMarkFriendMarried = (/* ? */) => event => {
+    // ?
   }
 
   return (
@@ -65,7 +59,7 @@ function App({
             key={fr.id}
           >
             {fr.fname} {fr.lname} is{fr.married ? ' happily ' : ' NOT '}married
-            <button onClick={onMarkFriendMarried(fr.id)}>Mark Married</button>
+            <button onClick={Function.prototype}>Mark Married</button>
           </div>
         ))
       }
@@ -83,5 +77,5 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   // action creators
-  { changeInput, addFriend, markFriendMarried },
+  actionCreators,
 )(App)
