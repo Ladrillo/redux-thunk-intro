@@ -10,3 +10,6 @@ export const SET_POSTED_FRIEND = 'SET_POSTED_FRIEND' // add the friend to the re
 // spinner
 export const SPINNER_START = 'SPINNER_START'
 export const SPINNER_STOP = 'SPINNER_STOP'
+// marking married
+export const PUT_FRIEND_START = 'PUT_FRIEND_START'
+export const SET_UPDATED_FRIEND = 'SET_UPDATED_FRIEND'
