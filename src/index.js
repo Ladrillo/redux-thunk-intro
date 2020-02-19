@@ -5,12 +5,13 @@ import App from './App'
 import thunk from 'redux-thunk'
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
-import { formReducer, friendsReducer } from './state/reducers'
+import { formReducer, friendsReducer, spinnerReducer } from './state/reducers'
 
 // STEP-4 USE combineReducers FROM redux TO MAKE A SINGLE REDUCER
 const combinedReducer = combineReducers({
   formValues: formReducer,
   friends: friendsReducer,
+  spinnerOn: spinnerReducer,
 })
 
 // STEP-5 USE createStore FROM redux TO MAKE A STATE STORE
