@@ -9,6 +9,7 @@ import * as types from './actionTypes'
 //     { id: someId, fname: 'Jane', lname: 'Doe', married: false },
 //     { id: anotherId, fname: 'john', lname: 'Smith', married: false },
 //   ],
+//   isSpinnerOn: false,
 // }
 
 // STEP-3 CREATE ONE REDUCER FUNCTION PER SLICE OF STATE
