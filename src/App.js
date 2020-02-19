@@ -58,7 +58,7 @@ function App({
             key={fr.id}
           >
             {fr.fname} {fr.lname} is{fr.married ? ' happily ' : ' NOT '}married
-            <button onClick={Function.prototype}>Mark Married</button>
+            <button onClick={Function.prototype /* ??? */}>Mark Married</button>
           </div>
         ))
       }

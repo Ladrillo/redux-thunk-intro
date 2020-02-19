@@ -6,18 +6,6 @@ import thunk from 'redux-thunk'
 import { combineReducers, createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { formReducer, friendsReducer } from './state/reducers'
-// STEP-1 DESIGN APPLICATION STATE
-// {
-//   formValues: { // SLICE 1
-//     fname: '',
-//     lname: '',
-//   },
-//   friends: [    // SLICE 2
-//     { id: someId, fname: 'Jane', lname: 'Doe', married: false },
-//     { id: anotherId, fname: 'john', lname: 'Smith', married: false },
-//   ],
-//   spinnerOn: false,
-// }
 
 // STEP-4 USE combineReducers FROM redux TO MAKE A SINGLE REDUCER
 const combinedReducer = combineReducers({
