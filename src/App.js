@@ -74,6 +74,7 @@ function mapStateToProps(state) {
     formValues: state.formValues,
     friends: state.friends,
     spinnerOn: state.spinnerOn,
+    // anything you want and is derived from state
   }
 }
 
