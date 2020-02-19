@@ -30,7 +30,7 @@ function App({
       married: false,
     })
   }
-  const onMarkFriendMarried = (friend) => event => {
+  const onMarkFriendMarried = friend => event => {
     updateFriend({ ...friend, married: true })
   }
 
