@@ -84,7 +84,7 @@ function App({
 
 function mapStateToProps(state) {
   return {
-    // what props do we want the component to get?
+    // what props do we want the component to get from state?
     formValues: state.formValues,
     friends: state.friends,
     spinnerOn: state.spinnerOn,
