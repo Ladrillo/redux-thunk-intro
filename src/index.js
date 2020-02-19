@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
-import { combineReducers, createStore } from 'redux'
+import thunk from 'redux-thunk'
+import { combineReducers, createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { formReducer, friendsReducer } from './state/reducers'
 // STEP-1 DESIGN APPLICATION STATE
@@ -27,8 +28,12 @@ const combinedReducer = combineReducers({
 // STEP-5 USE createStore FROM redux TO MAKE A STATE STORE
 const store = createStore(
   combinedReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-)
+  {},
+  compose(
+    applyMiddleware(thunk /* ,etc , other middlewares */),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  ),
+);
 
 ReactDOM.render(
   // STEP-6 WRAP THE APPLICATION WITH A PROVIDER FROM react-redux
