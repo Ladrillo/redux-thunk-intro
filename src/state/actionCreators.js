@@ -1,4 +1,5 @@
 import * as types from './actionTypes'
+import axios from 'axios'
 
 const friendsAPI = 'http://localhost:4000/api/friends'
 
@@ -8,4 +9,8 @@ export function changeInput({ inputName, inputValue }) {
     type: types.INPUT_CHANGE,
     payload: { inputName, inputValue }
   }
+}
+
+export const fetchAllFriends = (/* ? */) => dispatch => {
+  
 }
