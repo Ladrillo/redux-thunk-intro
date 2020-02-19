@@ -15,6 +15,10 @@ const combinedReducer = combineReducers({
 })
 
 // STEP-5 USE createStore FROM redux TO MAKE A STATE STORE
+// const store = createStore(
+//   combinedReducer,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+// )
 const store = createStore(
   combinedReducer, // monster reducer
   {},              // inject some state into the app
