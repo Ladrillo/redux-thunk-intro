@@ -60,7 +60,7 @@ export const updateFriend = ({ id, fname, lname, married }) => dispatch => {
     married
   })
     .then(res => {
-      // we have the newly created friend inside res.data
+      // we have the updated friend inside res.data
       dispatch({ type: types.SET_UPDATED_FRIEND, payload: res.data })
     })
     .catch(err => {
