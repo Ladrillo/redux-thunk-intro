@@ -13,6 +13,7 @@ function App({
   changeInput,
   fetchAllFriends,
   postNewFriend,
+  updateFriend,
   // C- props actually injected by the parent component
 }) {
   const onChange = event => {
@@ -29,8 +30,8 @@ function App({
       married: false,
     })
   }
-  const onMarkFriendMarried = (/* ??? */) => event => {
-    // ???
+  const onMarkFriendMarried = (friend) => event => {
+    updateFriend({ ...friend, married: true })
   }
 
   useEffect(() => {
@@ -73,7 +74,7 @@ function App({
             key={fr.id}
           >
             {fr.fname} {fr.lname} is{fr.married ? ' happily ' : ' NOT '}married
-            <button onClick={Function.prototype /* ??? */}>Mark Married</button>
+            <button onClick={onMarkFriendMarried(fr)}>Mark Married</button>
           </div>
         ))
       }
