@@ -11,5 +11,5 @@ export const SET_POSTED_FRIEND = 'SET_POSTED_FRIEND' // add the friend to the re
 export const SPINNER_START = 'SPINNER_START'
 export const SPINNER_STOP = 'SPINNER_STOP'
 // marking married
-export const PUT_FRIEND_START = 'PUT_FRIEND_START'
-export const SET_UPDATED_FRIEND = 'SET_UPDATED_FRIEND'
+export const PUT_FRIEND_START = 'PUT_FRIEND_START' // no state change
+export const SET_UPDATED_FRIEND = 'SET_UPDATED_FRIEND' // replace updated friend in the redux
