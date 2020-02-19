@@ -1,15 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-// STEP-9 BRING IN THE ACTION CREATORS
 import * as actionCreators from './state/actionCreators'
 import './App.css'
 
 function App({
   // PROPS COME IN SEVERAL FLAVORS:
-  // A- data from redux state
+  // A- data from redux state (injected by STEP-8)
   formValues,
   friends,
-  // B- callbacks to change state (action creators)
+  // B- callbacks to change state (action creators injected by STEP-9)
   changeInput,
   // C- props actually injected by the parent component
 }) {
@@ -67,15 +66,16 @@ function App({
   )
 }
 
-// STEP-8 USE connect FROM react-redux TO WRAP OUR COMPONENT
 function mapStateToProps(state) {
   return {
+    // what props do we want the component to get?
     formValues: state.formValues,
     friends: state.friends,
   }
 }
+
+// STEP-8 USE connect FROM react-redux TO WRAP OUR COMPONENT
 export default connect(
   mapStateToProps,
-  // action creators
-  actionCreators,
+  actionCreators, // STEP-9 BRING IN THE ACTION CREATORS
 )(App)
