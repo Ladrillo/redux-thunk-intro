@@ -16,8 +16,8 @@ const combinedReducer = combineReducers({
 
 // STEP-5 USE createStore FROM redux TO MAKE A STATE STORE
 const store = createStore(
-  combinedReducer,
-  {},
+  combinedReducer, // monster reducer
+  {},              // inject some state into the app
   compose(
     applyMiddleware(thunk /* ,etc , other middlewares */),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
