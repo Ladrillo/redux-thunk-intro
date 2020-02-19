@@ -12,5 +12,6 @@ export function changeInput({ inputName, inputValue }) {
 }
 
 export const fetchAllFriends = (/* ? */) => dispatch => {
-  
+  dispatch({ type: types.FETCH_FRIENDS_START }) // action
+  dispatch({ type: types.SPINNER_START })
 }
