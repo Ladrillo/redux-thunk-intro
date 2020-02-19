@@ -12,6 +12,7 @@ function App({
   // B- callbacks to change state (action creators injected by STEP-9)
   changeInput,
   fetchAllFriends,
+  postNewFriend,
   // C- props actually injected by the parent component
 }) {
   const onChange = event => {
@@ -22,7 +23,11 @@ function App({
   }
   const onSubmit = event => {
     event.preventDefault()
-    // ???
+    postNewFriend({
+      fname: formValues.fname,
+      lname: formValues.lname,
+      married: false,
+    })
   }
   const onMarkFriendMarried = (/* ??? */) => event => {
     // ???

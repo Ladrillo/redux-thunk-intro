@@ -14,9 +14,32 @@ export function changeInput({ inputName, inputValue }) {
 export const fetchAllFriends = () => dispatch => {
   dispatch({ type: types.FETCH_FRIENDS_START })
   dispatch({ type: types.SPINNER_START })
+
   axios.get(friendsAPI)
     .then(res => {
       dispatch({ type: types.SET_FETCHED_FRIENDS, payload: res.data })
+    })
+    .catch(err => {
+      debugger
+      // dispatch({ type: "SET_ERROR", payload: err.message })
+    })
+    .finally(() => {
+      dispatch({ type: types.SPINNER_STOP })
+    })
+}
+
+export const postNewFriend = ({ fname, lname, married }) => dispatch => {
+  dispatch({ type: types.POST_FRIEND_START })
+  dispatch({ type: types.SPINNER_START })
+
+  axios.post(friendsAPI, {
+    fname,
+    lname,
+    married
+  })
+    .then(res => {
+      // we have the newly created friend inside res.data
+      dispatch({ type: types.SET_POSTED_FRIEND, payload: res.data })
     })
     .catch(err => {
       debugger
