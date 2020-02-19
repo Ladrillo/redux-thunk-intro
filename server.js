@@ -31,13 +31,13 @@ app.post('/api/friends', (req, res) => {
 })
 
 app.delete('/api/friends/:id', (req, res) => {
-  if (req.params.id) {
+  if (friends.find(fr => fr.id === req.params.id)) {
     setTimeout(() => {
       friends = friends.filter(fr => fr.id !== req.params.id)
       res.json(friends)
     }, 1100)
   } else {
-    res.status(500).json({ message: 'You need to pass an id' })
+    res.status(500).json({ message: 'You need to pass a valid id' })
   }
 })
 
