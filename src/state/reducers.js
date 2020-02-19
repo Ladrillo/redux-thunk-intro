@@ -37,3 +37,7 @@ export function friendsReducer(state = initialStateFriends, action) {
       return state
   }
 }
+
+export function spinnerReducer() {
+  
+}
